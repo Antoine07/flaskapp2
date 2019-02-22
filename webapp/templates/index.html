@@ -17,14 +17,16 @@
         </tr>
     </thead>
     <tbody>
+        {% for user in users %}
         <tr>
-            <th scope="row">id</th>
-            <td> name </td>
-            <td> grade </td>
-            <td>note todo (plus tard)</td>
-            <td>tarif</td>
-            <td>country</td>
+            <th scope="row">{{ user['id'] }}</th>
+            <td>{{ user['name']}}</td>
+            <td>{{ user.grade }}</td>
+            <td>TODO note...</td>
+            <td>{{ user['tarif'] if user['tarif'] else 'no tarif'}}</td>
+            <td>{{ user['country']}}</td>
         </tr>
+        {% endfor %}
     </tbody>
 </table>
 {% endblock %}
